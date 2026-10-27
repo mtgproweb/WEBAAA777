@@ -1,0 +1,146 @@
+[
+  {
+    "slug": "prestamos-empleados-publicos",
+    "title": "Empleados Públicos Nacionales",
+    "file": "docs/prestamos-empleados-publicos/index.html",
+    "status": "final"
+  },
+  {
+    "slug": "prestamos-para-docentes-y-auxiliares",
+    "title": "Docentes y Auxiliares DGCyE",
+    "file": "docs/prestamos-para-docentes-y-auxiliares/index.html",
+    "status": "final"
+  },
+  {
+    "slug": "prestamos-policia-provincia-buenos-aires",
+    "title": "Policía Provincia de Buenos Aires",
+    "file": "docs/prestamos-policia-provincia-buenos-aires/index.html",
+    "status": "final"
+  },
+  {
+    "slug": "prestamos-jubilados-pensionados-ips",
+    "title": "Jubilados y Pensionados IPS",
+    "file": "docs/prestamos-jubilados-pensionados-ips/index.html",
+    "status": "final"
+  },
+  {
+    "slug": "prestamos-servicio-penitenciario-bonaerense",
+    "title": "Servicio Penitenciario Bonaerense",
+    "file": "docs/prestamos-servicio-penitenciario-bonaerense/index.html",
+    "status": "final"
+  },
+  {
+    "slug": "prestamos-personal-salud",
+    "title": "Personal de la Salud",
+    "file": "docs/prestamos-personal-salud/index.html",
+    "status": "final"
+  },
+  {
+    "slug": "prestamos-fuerzas-armadas",
+    "title": "Fuerzas Armadas",
+    "file": "docs/prestamos-fuerzas-armadas/index.html",
+    "status": "final"
+  },
+  {
+    "slug": "prestamos-ejercito-argentino",
+    "title": "Ejército Argentino",
+    "file": "docs/prestamos-ejercito-argentino/index.html",
+    "status": "final"
+  },
+  {
+    "slug": "prestamos-armada-argentina",
+    "title": "Armada Argentina",
+    "file": "docs/prestamos-armada-argentina/index.html",
+    "status": "final"
+  },
+  {
+    "slug": "prestamos-fuerza-aerea-argentina",
+    "title": "Fuerza Aérea Argentina",
+    "file": "docs/prestamos-fuerza-aerea-argentina/index.html",
+    "status": "final"
+  },
+  {
+    "slug": "prestamos-fuerzas-de-seguridad",
+    "title": "Fuerzas de Seguridad",
+    "file": "docs/prestamos-fuerzas-de-seguridad/index.html",
+    "status": "final"
+  },
+  {
+    "slug": "prestamos-policia-federal",
+    "title": "Policía Federal Argentina",
+    "file": "docs/prestamos-policia-federal/index.html",
+    "status": "final"
+  },
+  {
+    "slug": "prestamos-gendarmeria-nacional",
+    "title": "Gendarmería Nacional Argentina",
+    "file": "docs/prestamos-gendarmeria-nacional/index.html",
+    "status": "final"
+  },
+  {
+    "slug": "prestamos-prefectura-naval-argentina",
+    "title": "Prefectura Naval Argentina",
+    "file": "docs/prestamos-prefectura-naval-argentina/index.html",
+    "status": "final"
+  },
+  {
+    "slug": "prestamos-policia-seguridad-aeroportuaria",
+    "title": "Policía de Seguridad Aeroportuaria",
+    "file": "docs/prestamos-policia-seguridad-aeroportuaria/index.html",
+    "status": "final"
+  },
+  {
+    "slug": "prestamos-servicio-penitenciario-federal",
+    "title": "Servicio Penitenciario Federal",
+    "file": "docs/prestamos-servicio-penitenciario-federal/index.html",
+    "status": "final"
+  },
+  {
+    "slug": "prestamos-caja-retiros-policia-federal",
+    "title": "Caja de Retiros Policía Federal",
+    "file": "docs/prestamos-caja-retiros-policia-federal/index.html",
+    "status": "final"
+  },
+  {
+    "slug": "prestamos-policia-de-la-ciudad",
+    "title": "Policía de la Ciudad",
+    "file": "docs/prestamos-policia-de-la-ciudad/index.html",
+    "status": "final"
+  },
+  {
+    "slug": "prestamos-personal-retirado-fuerzas",
+    "title": "Personal Retirado de Fuerzas",
+    "file": "docs/prestamos-personal-retirado-fuerzas/index.html",
+    "status": "final"
+  },
+  {
+    "slug": "quienes-somos",
+    "title": "Quiénes Somos",
+    "file": "docs/quienes-somos/index.html",
+    "status": "final"
+  },
+  {
+    "slug": "preguntas-frecuentes",
+    "title": "Preguntas Frecuentes",
+    "file": "docs/preguntas-frecuentes/index.html",
+    "status": "final"
+  },
+  {
+    "slug": "informacion-financiera",
+    "title": "Información Financiera",
+    "file": "docs/informacion-financiera/index.html",
+    "status": "final"
+  },
+  {
+    "slug": "politica-de-privacidad",
+    "title": "Política de Privacidad",
+    "file": "docs/politica-de-privacidad/index.html",
+    "status": "final"
+  },
+  {
+    "slug": "terminos-y-condiciones",
+    "title": "Términos y Condiciones",
+    "file": "docs/terminos-y-condiciones/index.html",
+    "status": "final"
+  }
+]
