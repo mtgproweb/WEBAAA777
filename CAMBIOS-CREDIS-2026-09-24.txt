@@ -1,0 +1,26 @@
+CREDISNET — ACTUALIZACIÓN DE MONTOS + MASCOTA CREDIS
+
+Este paquete parte del repositorio funcional recibido el 24/09/2026.
+
+IMPORTANTE
+- NO se modificó .github/workflows/pages.yml
+- NO se modificó docs/js/main.js
+- Credis está aislado en docs/css/credis-assistant.css y docs/js/credis-assistant.js
+
+MONTOS APLICADOS
+- Decreto 352/2026 (ex Decreto 14/2012): hasta $20.000.000
+- Docentes y Auxiliares DGCyE: hasta $10.000.000
+- Jubilados y Pensionados IPS: hasta $10.000.000
+- Policía Provincia de Buenos Aires: hasta $6.000.000
+- Personal de Salud: hasta $6.000.000
+
+CREDIS
+- Mascota SVG verde con borde/cejas/sonrisa azul
+- Arrastrable con mouse y touch
+- Se pega al borde más cercano
+- Parpadea, mueve la mirada y hace micro-movimientos
+- Muestra frases breves ocasionales
+- Click/tap abre panel de 3 opciones
+- Todos los CTA usan el WhatsApp indicado
+
+Para retirar Credis: quitar las referencias credis-assistant.* de los HTML y borrar esos dos archivos.

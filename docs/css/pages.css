@@ -1,0 +1,924 @@
+/* ==========================================================================
+   CREDISNET · PÁGINAS INTERNAS
+   Estilos centralizados. No agregar bloques <style> en páginas individuales.
+   La paleta principal vive en style.css.
+   ========================================================================== */
+
+/* Animaciones compartidas */
+@keyframes shine {
+  0% { left: -100%; }
+  20% { left: 200%; }
+  100% { left: 200%; }
+}
+@keyframes textShimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* Componentes: prestamos-policia-provincia-buenos-aires */
+/* ANIMACIONES DE ÉLITE (SHINE & SHIMMER) */
+
+
+
+
+/* Aislamiento de estilos específicos de la página de servicio (GLASSMORPHISM DARK) */
+.sl-page-wrapper { 
+  --glass-bg: rgba(15, 32, 64, 0.45);
+  --glass-bg-hover: rgba(22, 45, 85, 0.65);
+  --glass-border-light: rgba(255, 255, 255, 0.08);
+  --glass-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  --blur: blur(20px);
+  --green: #00C853;
+  --white: #FFFFFF;
+  
+  font-family: "Inter", sans-serif; 
+  color: var(--white); 
+  /* Fondo transparente para que se vea el Mesh Background de tu plantilla principal */
+  background: transparent; 
+}
+.sl-con { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+/* Textos Shimmer Elite */
+.sl-hero h1 span, .sl-sec h2 span, .sl-cta h2 span {
+  background: linear-gradient(90deg, var(--green) 0%, #A5FFC2 50%, var(--green) 100%);
+  background-size: 200% auto;
+  color: var(--green);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textShimmer 4s linear infinite;
+  display: inline-block;
+}
+
+/* Hero (Fondo Transparente) */
+.sl-hero { background: transparent; padding: 72px 0 60px; text-align: center; position: relative; overflow: hidden; border-bottom: 1px solid var(--glass-border-light); }
+.sl-hero::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(rgba(0,200,83,0.06) 1px, transparent 1px); background-size: 38px 38px; pointer-events: none; }
+.sl-lbl { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--green); margin-bottom: 14px; }
+.sl-hero h1 { font-family: "Montserrat", sans-serif; font-size: clamp(1.8rem, 5vw, 3.2rem); font-weight: 900; line-height: 1.05; letter-spacing: -0.025em; color: var(--white); margin-bottom: 18px; }
+.sl-sub { font-size: clamp(0.92rem, 2vw, 1.02rem); color: rgba(255,255,255,0.78); max-width: 620px; margin: 0 auto 28px; line-height: 1.75; }
+
+/* Decreto Badge (Glass) */
+.sl-decreto { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border-light); color: var(--green); font-size: 0.78rem; font-weight: 700; padding: 8px 18px; border-radius: 100px; margin-bottom: 20px; backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); box-shadow: var(--glass-shadow); }
+
+/* Pills (Glass) */
+.sl-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 32px; }
+.sl-pill { display: inline-flex; align-items: center; gap: 7px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border-light); color: var(--white); font-size: 0.8rem; font-weight: 600; padding: 6px 14px; border-radius: 100px; backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); box-shadow: var(--glass-shadow); }
+.sl-pill i { color: var(--green); font-size: 0.76rem; }
+
+/* Montos */
+.sl-amount { font-family: "Montserrat", sans-serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; color: var(--white); letter-spacing: -0.02em; margin-bottom: 6px; }
+.sl-amount-sub { font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-bottom: 28px; }
+
+/* Botones (Con Shine Effect) */
+.sl-btn-wa { display: inline-flex; align-items: center; gap: 10px; background: var(--whatsapp-bright); color: #fff !important; font-family: "Inter", sans-serif; font-size: 1.05rem; font-weight: 700; padding: 16px 40px; border-radius: 12px; text-decoration: none; box-shadow: 0 6px 28px rgba(37,211,102,0.5); transition: all 0.3s cubic-bezier(0.25,0.46,0.45,0.94); position: relative; overflow: hidden; }
+.sl-btn-wa::after { content: ""; position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent); animation: shine 3s infinite; }
+.sl-btn-wa:hover { background: var(--whatsapp); transform: translateY(-3px); text-decoration: none; box-shadow: 0 8px 30px rgba(7,94,84,0.6); }
+
+.sl-btn-out { display: inline-flex; align-items: center; gap: 7px; background: transparent; color: rgba(255,255,255,0.65); font-size: 0.8rem; font-weight: 600; padding: 7px 18px; border-radius: 100px; border: 1px solid rgba(255,255,255,0.22); text-decoration: none; margin-top: 12px; transition: all 0.3s; }
+.sl-btn-out:hover { color: var(--green); border-color: rgba(0,200,83,0.5); text-decoration: none; }
+
+.sl-disclaimer { font-size: 0.62rem; color: rgba(255,255,255,0.3); margin-top: 14px; }
+
+/* Secciones genéricas (Transparente) */
+.sl-sec { padding: 60px 0; border-bottom: 1px solid var(--glass-border-light); background: transparent; }
+.sl-sec-alt { background: transparent; }
+.sl-sec-lbl { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green); margin-bottom: 10px; display: block; }
+.sl-sec h2 { font-family: "Montserrat", sans-serif; font-size: clamp(1.4rem, 3.5vw, 2.1rem); font-weight: 900; color: var(--white); line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 14px; }
+.sl-sec p { font-size: 0.93rem; color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 12px; max-width: 700px; }
+
+/* Grid Tarjetas (GLASSMORPHISM) */
+.sl-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; margin-top: 32px; }
+.sl-card { 
+  background: var(--glass-bg); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur);
+  border: 1px solid var(--glass-border-light); border-radius: 14px; padding: 22px; transition: all 0.3s; box-shadow: var(--glass-shadow);
+  border-top: 1px solid rgba(255,255,255,0.15); border-left: 1px solid rgba(255,255,255,0.05);
+}
+.sl-card:hover { border-color: rgba(0,200,83,0.4); background: var(--glass-bg-hover); transform: translateY(-4px); box-shadow: 0 15px 35px rgba(0,0,0,0.4), 0 0 30px rgba(0,200,83,0.2); }
+.sl-card-ico { width: 44px; height: 44px; background: rgba(0,200,83,0.12); border-radius: 11px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; }
+.sl-card-ico i { color: var(--green); font-size: 1.15rem; }
+.sl-card h3 { font-family: "Montserrat", sans-serif; font-size: 0.93rem; font-weight: 800; color: var(--white); margin-bottom: 6px; }
+.sl-card p { font-size: 0.81rem; color: rgba(255,255,255,0.58); line-height: 1.6; margin: 0; }
+
+/* Tabla Condiciones (GLASSMORPHISM) */
+.sl-table { width: 100%; border-collapse: separate; border-spacing: 0; margin-top: 24px; font-size: 0.87rem; border-radius: 16px; overflow: hidden; border: 1px solid var(--glass-border-light); background: var(--glass-bg); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); box-shadow: var(--glass-shadow); }
+.sl-table th { background: rgba(0,200,83,0.1); color: var(--green); font-weight: 700; padding: 15px; text-align: left; font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; border-bottom: 1px solid var(--glass-border-light); }
+.sl-table td { padding: 14px 15px; color: rgba(255,255,255,0.75); border-bottom: 1px solid rgba(255,255,255,0.05); }
+.sl-table tr:last-child td { border-bottom: none; }
+.sl-table td:first-child { color: var(--white); font-weight: 600; }
+
+/* Lista de Requisitos */
+.sl-req { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 11px; margin-top: 20px; }
+.sl-req li { display: flex; align-items: center; gap: 9px; font-size: 0.88rem; color: rgba(255,255,255,0.75); }
+.sl-req li i { color: var(--green); font-size: 0.82rem; flex-shrink: 0; }
+
+/* FAQ Acordeón (GLASSMORPHISM) */
+.sl-faq { display: flex; flex-direction: column; gap: 12px; margin-top: 28px; }
+.sl-faq-item { 
+  background: var(--glass-bg); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur);
+  border: 1px solid var(--glass-border-light); border-radius: 12px; overflow: hidden; transition: all 0.3s; box-shadow: var(--glass-shadow);
+  border-top: 1px solid rgba(255,255,255,0.15); border-left: 1px solid rgba(255,255,255,0.05);
+}
+.sl-faq-item.open { border-color: rgba(0,200,83,0.4); background: var(--glass-bg-hover); box-shadow: 0 15px 35px rgba(0,0,0,0.4), 0 0 30px rgba(0,200,83,0.2); }
+.sl-faq-q { padding: 18px 20px; display: flex; justify-content: space-between; align-items: center; gap: 12px; cursor: pointer; font-weight: 700; font-size: 0.92rem; color: var(--white); user-select: none; }
+.sl-faq-q i { color: var(--green); font-size: 0.8rem; transition: transform 0.3s; flex-shrink: 0; }
+.sl-faq-a { display: none; padding: 0 20px 18px; font-size: 0.88rem; color: rgba(255,255,255,0.65); line-height: 1.75; }
+.sl-faq-item.open .sl-faq-q i { transform: rotate(180deg); }
+.sl-faq-item.open .sl-faq-a { display: block; animation: fadeIn 0.4s ease; }
+
+/* CTA Final (Transparente para Mesh) */
+.sl-cta { background: transparent; padding: 70px 0; text-align: center; position: relative; overflow: hidden; border-top: 1px solid var(--glass-border-light); }
+.sl-cta h2 { font-family: "Montserrat", sans-serif; font-size: clamp(1.5rem, 4vw, 2.4rem); font-weight: 900; color: var(--white); line-height: 1.1; margin-bottom: 12px; position: relative; z-index: 1;}
+.sl-cta p { font-size: 0.93rem; color: rgba(255,255,255,0.68); max-width: 500px; margin: 0 auto 28px; line-height: 1.75; position: relative; z-index: 1;}
+
+@media(max-width:600px) {
+  .sl-hero { padding: 50px 0 40px; }
+  .sl-sec { padding: 44px 0; }
+  .sl-grid { grid-template-columns: 1fr; }
+}
+
+
+/* Componentes: prestamos-para-docentes-y-auxiliares */
+/* ANIMACIONES DE ÉLITE (SHINE & SHIMMER) */
+
+
+
+
+/* Aislamiento de estilos específicos (GLASSMORPHISM DARK) */
+.dc-page-wrapper { 
+  --glass-bg: rgba(15, 32, 64, 0.45);
+  --glass-bg-hover: rgba(22, 45, 85, 0.65);
+  --glass-border-light: rgba(255, 255, 255, 0.08);
+  --glass-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  --blur: blur(20px);
+  --green: #00C853;
+  --white: #FFFFFF;
+  
+  font-family: "Inter", sans-serif; 
+  color: var(--white); 
+  /* Fondo transparente para que se vea el Mesh Background de tu plantilla principal */
+  background: transparent; 
+}
+.dc-con { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+/* Textos Shimmer Elite */
+.dc-hero h1 span, .dc-sec h2 span, .dc-cta h2 span {
+  background: linear-gradient(90deg, var(--green) 0%, #A5FFC2 50%, var(--green) 100%);
+  background-size: 200% auto;
+  color: var(--green);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textShimmer 4s linear infinite;
+  display: inline-block;
+}
+
+/* Hero (Fondo Transparente) */
+.dc-hero { 
+  background: transparent; 
+  padding: 72px 0 60px; text-align: center; position: relative; overflow: hidden; 
+  border-bottom: 1px solid var(--glass-border-light); 
+}
+.dc-lbl { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--green); margin-bottom: 14px; }
+.dc-hero h1 { font-family: "Montserrat", sans-serif; font-size: clamp(1.8rem, 5vw, 3.2rem); font-weight: 900; line-height: 1.05; letter-spacing: -0.025em; color: var(--white); margin-bottom: 18px; }
+.dc-sub { font-size: clamp(0.92rem, 2vw, 1.02rem); color: rgba(255,255,255,0.78); max-width: 620px; margin: 0 auto 28px; line-height: 1.75; }
+
+/* Pills */
+.dc-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 32px; }
+.dc-pill { display: inline-flex; align-items: center; gap: 7px; background: rgba(0,200,83,0.1); border: 1px solid rgba(0,200,83,0.25); color: var(--white); font-size: 0.8rem; font-weight: 600; padding: 6px 14px; border-radius: 100px; box-shadow: 0 0 15px rgba(0,200,83,0.1); }
+.dc-pill i { color: var(--green); font-size: 0.76rem; }
+
+/* Montos */
+.dc-amount { font-family: "Montserrat", sans-serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; color: var(--white); letter-spacing: -0.02em; margin-bottom: 6px; }
+.dc-amount-sub { font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-bottom: 28px; }
+
+/* Botones (Con Shine Effect) */
+.dc-btn-wa { 
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px; background: var(--whatsapp); color: #fff !important; 
+  font-family: "Inter", sans-serif; font-size: 1.05rem; font-weight: 700; padding: 16px 40px; border-radius: 12px; 
+  text-decoration: none; box-shadow: 0 6px 28px rgba(18,140,126,0.5); transition: all 0.3s cubic-bezier(0.25,0.46,0.45,0.94); 
+  position: relative; overflow: hidden;
+}
+.dc-btn-wa::after { 
+  content: ""; position: absolute; top: 0; left: -100%; width: 50%; height: 100%; 
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent); 
+  animation: shine 3s infinite; 
+}
+.dc-btn-wa:hover { background: var(--whatsapp-dark); transform: translateY(-3px); box-shadow: 0 8px 30px rgba(7,94,84,0.6); text-decoration: none; }
+
+.dc-btn-out { display: inline-flex; align-items: center; gap: 7px; background: transparent; color: rgba(255,255,255,0.65); font-size: 0.8rem; font-weight: 600; padding: 7px 18px; border-radius: 100px; border: 1px solid rgba(255,255,255,0.22); text-decoration: none; margin-top: 12px; transition: all 0.3s; }
+.dc-btn-out:hover { color: var(--green); border-color: rgba(0,200,83,0.5); text-decoration: none; }
+
+.dc-disclaimer { font-size: 0.62rem; color: rgba(255,255,255,0.3); margin-top: 14px; }
+
+/* Secciones genéricas (Transparente) */
+.dc-sec { padding: 60px 0; border-bottom: 1px solid var(--glass-border-light); background: transparent; }
+.dc-sec-alt { background: transparent; }
+.dc-sec-lbl { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green); margin-bottom: 10px; display: block; }
+.dc-sec h2 { font-family: "Montserrat", sans-serif; font-size: clamp(1.4rem, 3.5vw, 2.1rem); font-weight: 900; color: var(--white); line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 14px; }
+.dc-sec p { font-size: 0.93rem; color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 12px; max-width: 700px; }
+
+/* ========================================================================== */
+/* CALCULADORA / SIMULADOR (DARK GLASSMORPHISM ADAPTATION)                    */
+/* ========================================================================== */
+.dc-calc-box { background: var(--glass-bg); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); border: 1px solid var(--glass-border-light); border-top: 1px solid rgba(255,255,255,0.15); border-left: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 40px 20px; text-align: center; margin: 40px auto; max-width: 800px; box-shadow: var(--glass-shadow); transition: all 0.3s; }
+.dc-calc-box:hover { box-shadow: 0 15px 35px rgba(0,0,0,0.4), 0 0 30px rgba(0,200,83,0.1); border-color: rgba(0,200,83,0.3); }
+.dc-calc-box h2 { font-family: "Montserrat", sans-serif; font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 900; color: var(--white); margin-bottom: 8px; line-height: 1.1; }
+.dc-calc-box > p { font-size: 0.93rem; color: rgba(255,255,255,0.7); margin-bottom: 25px; }
+
+.dc-calc-badge-plazo { display: inline-block; background: rgba(0,200,83,0.12); border: 1px solid rgba(0,200,83,0.3); color: var(--green); padding: 6px 16px; border-radius: 50px; font-weight: 700; font-size: 0.9rem; font-family: "Montserrat", sans-serif; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 0.5px; box-shadow: 0 0 15px rgba(0,200,83,0.15); }
+.dc-amount-display { font-family: "Montserrat", sans-serif; font-size: clamp(2.5rem, 6vw, 3.5rem); font-weight: 900; color: var(--green); margin: 5px 0 25px; letter-spacing: -0.02em; }
+
+.dc-range-container { width: 100%; max-width: 600px; margin: 0 auto 35px; padding: 0 10px; }
+.dc-range-container input[type=range] { -webkit-appearance: none; width: 100%; background: transparent; }
+.dc-range-container input[type=range]:focus { outline: none; }
+.dc-range-container input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 10px; cursor: pointer; background: rgba(0, 200, 83, 0.2); border-radius: 10px; border: 1px solid rgba(255,255,255,0.05); }
+.dc-range-container input[type=range]::-webkit-slider-thumb { height: 28px; width: 28px; border-radius: 50%; background: var(--green); cursor: pointer; -webkit-appearance: none; margin-top: -10px; box-shadow: 0 4px 15px rgba(0,200,83,0.5); border: 3px solid #fff; transition: transform 0.1s; }
+.dc-range-container input[type=range]::-webkit-slider-thumb:hover { transform: scale(1.15); }
+.dc-range-container input[type=range]::-moz-range-track { width: 100%; height: 10px; cursor: pointer; background: rgba(0, 200, 83, 0.2); border-radius: 10px; }
+.dc-range-container input[type=range]::-moz-range-thumb { height: 28px; width: 28px; border-radius: 50%; background: var(--green); cursor: pointer; border: 3px solid #fff; box-shadow: 0 4px 15px rgba(0,200,83,0.5); }
+
+.dc-result-box { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 22px 15px; border-radius: 14px; width: 100%; max-width: 550px; margin: 0 auto 30px; }
+.dc-result-box span { display: block; font-size: 0.82rem; color: rgba(255,255,255,0.6); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+.dc-quota-val { font-family: "Montserrat", sans-serif; font-size: clamp(1.8rem, 5vw, 2.5rem); font-weight: 900; color: var(--green); margin: 6px 0; line-height: 1.1; }
+.dc-legal-subtext { display: block; font-size: 0.75rem; color: rgba(255,255,255,0.6); font-weight: 500; text-transform: none; letter-spacing: 0; line-height: 1.4; margin-top: 10px; padding-top: 10px; border-top: 1px dashed rgba(255,255,255,0.1); }
+
+.dc-calc-subtext { font-size: 0.78rem; color: rgba(255,255,255,0.5); text-align: center; margin-top: 16px; font-weight: 500; line-height: 1.5; padding: 0 10px; }
+.dc-trust-text { color: var(--white); font-weight: 700; margin-top: 6px; }
+
+/* Grid Tarjetas (GLASSMORPHISM) */
+.dc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; margin-top: 32px; }
+.dc-card { 
+  background: var(--glass-bg); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur);
+  border: 1px solid var(--glass-border-light); border-radius: 14px; padding: 22px; transition: all 0.3s; box-shadow: var(--glass-shadow);
+  border-top: 1px solid rgba(255,255,255,0.15); border-left: 1px solid rgba(255,255,255,0.1);
+}
+.dc-card:hover { border-color: rgba(0,200,83,0.4); background: var(--glass-bg-hover); transform: translateY(-4px); box-shadow: 0 15px 35px rgba(0,0,0,0.4), 0 0 30px rgba(0,200,83,0.2); }
+.dc-card-ico { width: 44px; height: 44px; background: rgba(0,200,83,0.12); border-radius: 11px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; }
+.dc-card-ico i { color: var(--green); font-size: 1.15rem; }
+.dc-card h3 { font-family: "Montserrat", sans-serif; font-size: 0.93rem; font-weight: 800; color: var(--white); margin-bottom: 6px; }
+.dc-card p { font-size: 0.81rem; color: rgba(255,255,255,0.58); line-height: 1.6; margin: 0; }
+
+/* Tabla Condiciones (GLASSMORPHISM) */
+.dc-table { width: 100%; border-collapse: separate; border-spacing: 0; margin-top: 24px; font-size: 0.87rem; border-radius: 16px; overflow: hidden; border: 1px solid var(--glass-border-light); background: var(--glass-bg); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); box-shadow: var(--glass-shadow); }
+.dc-table th { background: rgba(0,200,83,0.1); color: var(--green); font-weight: 700; padding: 15px; text-align: left; font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; border-bottom: 1px solid var(--glass-border-light); }
+.dc-table td { padding: 14px 15px; color: rgba(255,255,255,0.75); border-bottom: 1px solid rgba(255,255,255,0.05); }
+.dc-table tr:last-child td { border-bottom: none; }
+.dc-table td:first-child { color: var(--white); font-weight: 600; }
+
+/* Steps / Pasos (GLASS) */
+.dc-steps { display: flex; flex-direction: column; gap: 0; margin-top: 28px; }
+.dc-step { display: flex; gap: 16px; padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.dc-step:last-child { border-bottom: none; }
+.dc-step-n { width: 44px; height: 44px; flex-shrink: 0; border-radius: 11px; background: rgba(0,200,83,0.12); border: 1px solid rgba(0,200,83,0.3); color: var(--green); font-family: "Montserrat", sans-serif; font-size: 0.95rem; font-weight: 900; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 15px rgba(0,200,83,0.15);}
+.dc-step h4 { font-family: "Montserrat", sans-serif; font-size: 0.95rem; font-weight: 800; color: var(--white); margin-bottom: 4px; }
+.dc-step p { font-size: 0.85rem; color: rgba(255,255,255,0.58); line-height: 1.6; margin: 0; }
+
+/* Lista de Requisitos */
+.dc-req { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 11px; margin-top: 20px; }
+.dc-req li { display: flex; align-items: center; gap: 9px; font-size: 0.88rem; color: rgba(255,255,255,0.75); }
+.dc-req li i { color: var(--green); font-size: 0.82rem; flex-shrink: 0; }
+
+/* FAQ Acordeón (GLASSMORPHISM) */
+.dc-faq { display: flex; flex-direction: column; gap: 12px; margin-top: 28px; }
+.dc-faq-item { background: var(--glass-bg); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); border: 1px solid var(--glass-border-light); border-radius: 12px; overflow: hidden; transition: all 0.3s; box-shadow: var(--glass-shadow); border-top: 1px solid rgba(255,255,255,0.1); border-left: 1px solid rgba(255,255,255,0.05); }
+.dc-faq-item.open { border-color: rgba(0,200,83,0.4); background: var(--glass-bg-hover); box-shadow: 0 15px 35px rgba(0,0,0,0.4), 0 0 30px rgba(0,200,83,0.2); }
+.dc-faq-q { padding: 18px 20px; display: flex; justify-content: space-between; align-items: center; gap: 12px; cursor: pointer; font-weight: 700; font-size: 0.92rem; color: var(--white); user-select: none; }
+.dc-faq-q i { color: var(--green); font-size: 0.8rem; transition: transform 0.3s; flex-shrink: 0; }
+.dc-faq-a { display: none; padding: 0 20px 18px; font-size: 0.88rem; color: rgba(255,255,255,0.65); line-height: 1.75; }
+.dc-faq-item.open .dc-faq-q i { transform: rotate(180deg); }
+.dc-faq-item.open .dc-faq-a { display: block; animation: fadeIn 0.4s ease; }
+
+/* CTA Final (Transparente para Mesh) */
+.dc-cta { background: transparent; padding: 70px 0; text-align: center; position: relative; overflow: hidden; border-top: 1px solid var(--glass-border-light); }
+.dc-cta h2 { font-family: "Montserrat", sans-serif; font-size: clamp(1.5rem, 4vw, 2.4rem); font-weight: 900; color: var(--white); line-height: 1.1; margin-bottom: 12px; position: relative; z-index: 1;}
+.dc-cta p { font-size: 0.93rem; color: rgba(255,255,255,0.68); max-width: 500px; margin: 0 auto 28px; line-height: 1.75; position: relative; z-index: 1;}
+
+@media(max-width:600px) {
+  .dc-hero { padding: 50px 0 40px; }
+  .dc-sec { padding: 44px 0; }
+  .dc-grid { grid-template-columns: 1fr; }
+  .dc-calc-box { padding: 30px 15px; }
+}
+
+
+/* Componentes: prestamos-personal-salud */
+/* ANIMACIONES DE ÉLITE (SHINE & SHIMMER) */
+
+
+
+
+/* Aislamiento de estilos específicos de la página de servicio (GLASSMORPHISM DARK) */
+.pp-page-wrapper { 
+  --glass-bg: rgba(15, 32, 64, 0.45);
+  --glass-bg-hover: rgba(22, 45, 85, 0.65);
+  --glass-border-light: rgba(255, 255, 255, 0.08);
+  --glass-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  --blur: blur(20px);
+  --green: #00C853;
+  --white: #FFFFFF;
+  
+  font-family: "Inter", sans-serif; 
+  color: var(--white); 
+  /* Fondo transparente para que se vea el Mesh Background de tu plantilla principal */
+  background: transparent; 
+}
+.pp-con { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+/* Textos Shimmer Elite */
+.pp-hero h1 span, .pp-sec h2 span, .pp-cta h2 span {
+  background: linear-gradient(90deg, var(--green) 0%, #A5FFC2 50%, var(--green) 100%);
+  background-size: 200% auto;
+  color: var(--green);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textShimmer 4s linear infinite;
+  display: inline-block;
+}
+
+/* Hero (Fondo Transparente) */
+.pp-hero { background: transparent; padding: 72px 0 60px; text-align: center; position: relative; overflow: hidden; border-bottom: 1px solid var(--glass-border-light); }
+.pp-hero::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(rgba(0,200,83,0.06) 1px, transparent 1px); background-size: 38px 38px; pointer-events: none; }
+.pp-lbl { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--green); margin-bottom: 14px; }
+.pp-hero h1 { font-family: "Montserrat", sans-serif; font-size: clamp(1.8rem, 5vw, 3.2rem); font-weight: 900; line-height: 1.05; letter-spacing: -0.025em; color: var(--white); margin-bottom: 18px; }
+.pp-sub { font-size: clamp(0.92rem, 2vw, 1.02rem); color: rgba(255,255,255,0.78); max-width: 620px; margin: 0 auto 28px; line-height: 1.75; }
+
+/* Pills (Glass) */
+.pp-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 32px; }
+.pp-pill { display: inline-flex; align-items: center; gap: 7px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border-light); color: var(--white); font-size: 0.8rem; font-weight: 600; padding: 6px 14px; border-radius: 100px; backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); box-shadow: var(--glass-shadow); }
+.pp-pill i { color: var(--green); font-size: 0.76rem; }
+
+/* Botones (Con Shine Effect) */
+.pp-btn-wa { display: inline-flex; align-items: center; gap: 10px; background: var(--whatsapp-bright); color: #fff !important; font-family: "Inter", sans-serif; font-size: 1.05rem; font-weight: 700; padding: 16px 40px; border-radius: 12px; text-decoration: none; box-shadow: 0 6px 28px rgba(37,211,102,0.5); transition: all 0.3s cubic-bezier(0.25,0.46,0.45,0.94); position: relative; overflow: hidden; }
+.pp-btn-wa::after { content: ""; position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent); animation: shine 3s infinite; }
+.pp-btn-wa:hover { background: var(--whatsapp); transform: translateY(-3px); text-decoration: none; box-shadow: 0 8px 30px rgba(7,94,84,0.6); }
+
+.pp-btn-out { display: inline-flex; align-items: center; gap: 7px; background: transparent; color: rgba(255,255,255,0.65); font-size: 0.8rem; font-weight: 600; padding: 7px 18px; border-radius: 100px; border: 1px solid rgba(255,255,255,0.22); text-decoration: none; margin-top: 12px; transition: all 0.3s; }
+.pp-btn-out:hover { color: var(--green); border-color: rgba(0,200,83,0.5); text-decoration: none; }
+
+.pp-disclaimer { font-size: 0.62rem; color: rgba(255,255,255,0.3); margin-top: 14px; }
+
+/* Secciones genéricas (Transparente) */
+.pp-sec { padding: 60px 0; border-bottom: 1px solid var(--glass-border-light); background: transparent; }
+.pp-sec-alt { background: transparent; }
+.pp-sec-lbl { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green); margin-bottom: 10px; display: block; }
+.pp-sec h2 { font-family: "Montserrat", sans-serif; font-size: clamp(1.4rem, 3.5vw, 2.1rem); font-weight: 900; color: var(--white); line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 14px; }
+.pp-sec p { font-size: 0.93rem; color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 12px; max-width: 700px; }
+
+/* Grid Tarjetas (GLASSMORPHISM) */
+.pp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; margin-top: 32px; }
+.pp-card { 
+  background: var(--glass-bg); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur);
+  border: 1px solid var(--glass-border-light); border-radius: 14px; padding: 22px; transition: all 0.3s; box-shadow: var(--glass-shadow);
+  border-top: 1px solid rgba(255,255,255,0.15); border-left: 1px solid rgba(255,255,255,0.05);
+}
+.pp-card:hover { border-color: rgba(0,200,83,0.4); background: var(--glass-bg-hover); transform: translateY(-4px); box-shadow: 0 15px 35px rgba(0,0,0,0.4), 0 0 30px rgba(0,200,83,0.2); }
+.pp-card-ico { width: 44px; height: 44px; background: rgba(0,200,83,0.12); border-radius: 11px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; }
+.pp-card-ico i { color: var(--green); font-size: 1.15rem; }
+.pp-card h3 { font-family: "Montserrat", sans-serif; font-size: 0.93rem; font-weight: 800; color: var(--white); margin-bottom: 6px; }
+.pp-card p { font-size: 0.81rem; color: rgba(255,255,255,0.58); line-height: 1.6; margin: 0; }
+
+/* FAQ Acordeón (GLASSMORPHISM) */
+.pp-faq { display: flex; flex-direction: column; gap: 12px; margin-top: 28px; }
+.pp-faq-item { 
+  background: var(--glass-bg); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur);
+  border: 1px solid var(--glass-border-light); border-radius: 12px; overflow: hidden; transition: all 0.3s; box-shadow: var(--glass-shadow);
+  border-top: 1px solid rgba(255,255,255,0.15); border-left: 1px solid rgba(255,255,255,0.05);
+}
+.pp-faq-item.open { border-color: rgba(0,200,83,0.4); background: var(--glass-bg-hover); box-shadow: 0 15px 35px rgba(0,0,0,0.4), 0 0 30px rgba(0,200,83,0.2); }
+.pp-faq-q { padding: 16px 18px; display: flex; justify-content: space-between; align-items: center; gap: 12px; cursor: pointer; font-weight: 700; font-size: 0.92rem; color: var(--white); user-select: none; }
+.pp-faq-q i { color: var(--green); font-size: 0.8rem; transition: transform 0.3s; flex-shrink: 0; }
+.pp-faq-a { display: none; padding: 0 20px 18px; font-size: 0.88rem; color: rgba(255,255,255,0.65); line-height: 1.75; }
+.pp-faq-item.open .pp-faq-q i { transform: rotate(180deg); }
+.pp-faq-item.open .pp-faq-a { display: block; animation: fadeIn 0.4s ease; }
+
+/* CTA Final (Transparente para Mesh) */
+.pp-cta { background: transparent; padding: 70px 0; text-align: center; position: relative; overflow: hidden; border-top: 1px solid var(--glass-border-light); }
+.pp-cta h2 { font-family: "Montserrat", sans-serif; font-size: clamp(1.5rem, 4vw, 2.4rem); font-weight: 900; color: var(--white); line-height: 1.1; margin-bottom: 12px; position: relative; z-index: 1;}
+.pp-cta p { font-size: 0.93rem; color: rgba(255,255,255,0.68); max-width: 500px; margin: 0 auto 28px; line-height: 1.75; position: relative; z-index: 1;}
+
+@media(max-width:600px) {
+  .pp-hero { padding: 50px 0 40px; }
+  .pp-sec { padding: 44px 0; }
+  .pp-grid { grid-template-columns: 1fr; }
+}
+
+
+/* Componentes: preguntas-frecuentes */
+/* ANIMACIONES DE ÉLITE (SHINE & SHIMMER) */
+
+
+
+
+/* Aislamiento de estilos específicos de la página FAQ (GLASSMORPHISM DARK) */
+.fq-page-wrapper {
+    --glass-bg: rgba(15, 32, 64, 0.45);
+    --glass-bg-hover: rgba(22, 45, 85, 0.65);
+    --glass-border-light: rgba(255, 255, 255, 0.08);
+    --glass-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    --blur: blur(20px);
+    --green: #00C853;
+    --white: #FFFFFF;
+
+    font-family: "Inter", sans-serif;
+    color: var(--white);
+    background: transparent; /* Permite ver el fondo animado de la plantilla principal */
+}
+.fq-page-wrapper .fq-con { width: 100%; max-width: 860px; margin: 0 auto; padding: 0 20px; }
+
+/* Textos Shimmer Elite */
+.fq-hero h1 span, .fq-cta-mid h3 span, .fq-cta-final h2 span {
+    background: linear-gradient(90deg, var(--green) 0%, #A5FFC2 50%, var(--green) 100%);
+    background-size: 200% auto;
+    color: var(--green);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textShimmer 4s linear infinite;
+    display: inline-block;
+}
+
+/* Hero FAQ (Fondo Transparente) */
+.fq-hero { background: transparent; padding: 72px 0 56px; text-align: center; position: relative; overflow: hidden; border-bottom: 1px solid var(--glass-border-light); }
+.fq-hero-lbl { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--green); margin-bottom: 14px; }
+.fq-hero h1 { font-family: "Montserrat", sans-serif; font-size: clamp(1.8rem, 5vw, 3rem); font-weight: 900; line-height: 1.05; letter-spacing: -0.025em; color: var(--white); margin-bottom: 16px; }
+.fq-hero-sub { font-size: clamp(0.9rem, 2vw, 1rem); color: rgba(255,255,255,0.7); max-width: 580px; margin: 0 auto; line-height: 1.75; }
+
+/* Filtros de Categorías (Glass) */
+.fq-cats { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; padding: 36px 0 8px; }
+.fq-cat-btn { display: inline-flex; align-items: center; gap: 7px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border-light); color: rgba(255,255,255,0.7); font-size: 0.8rem; font-weight: 600; padding: 7px 16px; border-radius: 100px; cursor: pointer; backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); transition: all 0.3s cubic-bezier(0.25,0.46,0.45,0.94); box-shadow: var(--glass-shadow); }
+.fq-cat-btn:hover, .fq-cat-btn.active { background: rgba(0,200,83,0.15); border-color: rgba(0,200,83,0.4); color: var(--green); box-shadow: 0 4px 15px rgba(0,200,83,0.2); }
+.fq-cat-btn i { font-size: 0.76rem; }
+
+/* Estructura FAQ */
+.fq-body { padding: 20px 0 60px; }
+.fq-group { margin-bottom: 48px; transition: opacity 0.4s ease; }
+/* Ocultar grupos filtrados */
+.fq-group.hidden-group { display: none; opacity: 0; }
+
+.fq-group-title { font-family: "Montserrat", sans-serif; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: var(--green); margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+.fq-group-title::after { content: ""; flex: 1; height: 1px; background: rgba(0,200,83,0.2); }
+.fq-group-title i { font-size: 0.85rem; }
+
+/* Items Acordeón (Glassmorphism) */
+.fq-item { 
+    background: var(--glass-bg); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur);
+    border: 1px solid var(--glass-border-light); border-radius: 12px; overflow: hidden; margin-bottom: 10px; transition: all 0.3s ease; box-shadow: var(--glass-shadow);
+    border-top: 1px solid rgba(255,255,255,0.15); border-left: 1px solid rgba(255,255,255,0.05);
+}
+.fq-item.open { border-color: rgba(0,200,83,0.4); background: var(--glass-bg-hover); box-shadow: 0 15px 35px rgba(0,0,0,0.4), 0 0 30px rgba(0,200,83,0.2); }
+.fq-q { padding: 18px 20px; display: flex; justify-content: space-between; align-items: flex-start; gap: 14px; cursor: pointer; font-weight: 700; font-size: 0.9rem; color: var(--white); line-height: 1.4; user-select: none; }
+.fq-q-ico { width: 32px; height: 32px; border-radius: 50%; background: rgba(0,200,83,0.1); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; transition: background 0.3s; }
+.fq-q-ico i { color: var(--green); font-size: 0.75rem; transition: transform 0.3s ease; }
+.fq-item.open .fq-q-ico { background: rgba(0,200,83,0.2); }
+.fq-item.open .fq-q-ico i { transform: rotate(180deg); color: #fff; }
+.fq-a { display: none; padding: 0 20px 18px 20px; font-size: 0.88rem; color: rgba(255,255,255,0.68); line-height: 1.8; }
+.fq-item.open .fq-a { display: block; animation: fadeIn 0.4s ease; }
+.fq-a strong { color: var(--white); }
+.fq-a a { color: var(--green); text-decoration: none; }
+.fq-a a:hover { text-decoration: underline; }
+
+/* CTAs (Glass) */
+.fq-cta-mid { 
+    background: var(--glass-bg); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur);
+    border: 1px solid var(--glass-border-light); border-radius: 16px; padding: 32px 28px; text-align: center; margin: 40px 0; box-shadow: var(--glass-shadow);
+}
+.fq-cta-mid h3 { font-family: "Montserrat", sans-serif; font-size: 1.1rem; font-weight: 900; color: var(--white); margin-bottom: 8px; }
+.fq-cta-mid p { font-size: 0.85rem; color: rgba(255,255,255,0.6); margin-bottom: 20px; line-height: 1.65; }
+
+/* Botones WhatsApp con Efecto Shine */
+.fq-btn-wa { 
+    display: inline-flex; align-items: center; gap: 9px; background: var(--whatsapp-bright); color: #fff !important; 
+    font-family: "Inter", sans-serif; font-size: 0.95rem; font-weight: 700; padding: 13px 28px; border-radius: 10px; 
+    text-decoration: none; box-shadow: 0 4px 20px rgba(37,211,102,0.4); transition: transform 0.3s, background 0.3s; 
+    position: relative; overflow: hidden;
+}
+.fq-btn-wa::after { content: ""; position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent); animation: shine 3s infinite; }
+.fq-btn-wa:hover { background: var(--whatsapp); transform: translateY(-2px); text-decoration: none; }
+
+.fq-btn-wa-xl { 
+    display: inline-flex; align-items: center; gap: 10px; background: var(--whatsapp-bright); color: #fff !important; 
+    font-family: "Inter", sans-serif; font-size: 1.05rem; font-weight: 700; padding: 16px 40px; border-radius: 12px; 
+    text-decoration: none; box-shadow: 0 6px 28px rgba(37,211,102,0.5); transition: transform 0.3s, background 0.3s; 
+    position: relative; overflow: hidden;
+}
+.fq-btn-wa-xl::after { content: ""; position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent); animation: shine 3s infinite; }
+.fq-btn-wa-xl:hover { background: var(--whatsapp); transform: translateY(-3px); text-decoration: none; }
+
+/* CTA Final transparente para Mesh */
+.fq-cta-final { background: transparent; padding: 64px 0; text-align: center; position: relative; overflow: hidden; border-top: 1px solid var(--glass-border-light); }
+.fq-cta-final::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(0,200,83,0.08) 0%, transparent 65%); pointer-events: none; }
+.fq-cta-final h2 { font-family: "Montserrat", sans-serif; font-size: clamp(1.4rem, 4vw, 2.2rem); font-weight: 900; color: var(--white); margin-bottom: 12px; position: relative; z-index: 1;}
+.fq-cta-final p { font-size: 0.9rem; color: rgba(255,255,255,0.65); max-width: 480px; margin: 0 auto 26px; line-height: 1.75; position: relative; z-index: 1;}
+
+@media(max-width:600px) {
+    .fq-hero { padding: 52px 0 44px; }
+    .fq-q { font-size: 0.85rem; }
+    .fq-cta-mid { padding: 24px 18px; }
+}
+
+
+/* Componentes: terminos-y-condiciones */
+/* ANIMACIONES DE ÉLITE (SHIMMER) */
+
+
+/* Aislamiento de estilos específicos de la página Legal (GLASSMORPHISM DARK) */
+.lg-page-wrapper { 
+  --glass-bg: rgba(15, 32, 64, 0.45);
+  --glass-bg-hover: rgba(22, 45, 85, 0.65);
+  --glass-border-light: rgba(255, 255, 255, 0.08);
+  --glass-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  --blur: blur(20px);
+  --green: #00C853;
+  --white: #FFFFFF;
+  
+  font-family: "Inter", sans-serif; 
+  color: var(--white); 
+  /* Fondo transparente para que se vea el Mesh Background de tu plantilla principal */
+  background: transparent; 
+}
+.lg-con { width: 100%; max-width: 900px; margin: 0 auto; padding: 0 20px; }
+
+/* Textos Shimmer Elite */
+.lg-hero h1 span, .lg-section h2 {
+  background: linear-gradient(90deg, var(--green) 0%, #A5FFC2 50%, var(--green) 100%);
+  background-size: 200% auto;
+  color: var(--green);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textShimmer 4s linear infinite;
+  display: inline-block;
+}
+
+/* Hero Legal (Fondo Transparente) */
+.lg-hero { background: transparent; padding: 60px 0 48px; border-bottom: 1px solid var(--glass-border-light); position: relative; overflow: hidden; }
+.lg-hero::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(rgba(0,200,83,0.06) 1px, transparent 1px); background-size: 38px 38px; pointer-events: none; }
+.lg-hero h1 { font-family: "Montserrat", sans-serif; font-size: clamp(1.6rem, 4vw, 2.6rem); font-weight: 900; color: var(--white); margin-bottom: 12px; letter-spacing: -0.02em; }
+.lg-hero p { font-size: 0.9rem; color: rgba(255,255,255,0.55); line-height: 1.6; }
+
+/* Cuerpo Legal */
+.lg-body { padding: 48px 0; }
+.lg-section { margin-bottom: 40px; }
+.lg-section h2 { font-family: "Montserrat", sans-serif; font-size: 1rem; font-weight: 800; margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid rgba(0,200,83,0.15); }
+.lg-section p { font-size: 0.88rem; color: rgba(255,255,255,0.68); line-height: 1.85; margin-bottom: 12px; }
+.lg-section strong { color: var(--white); font-weight: 600; }
+
+/* Footer Nota (GLASSMORPHISM) */
+.lg-footer-note { 
+  background: var(--glass-bg); 
+  backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur);
+  border: 1px solid var(--glass-border-light); 
+  border-top: 1px solid rgba(255,255,255,0.15); 
+  border-left: 1px solid rgba(255,255,255,0.05);
+  border-radius: 12px; padding: 24px; margin-top: 50px; 
+  font-size: 0.8rem; color: rgba(255,255,255,0.65); line-height: 1.7; text-align: center; 
+  box-shadow: var(--glass-shadow);
+}
+.lg-footer-note a { color: var(--green); text-decoration: none; font-weight: 600; transition: opacity 0.2s; }
+.lg-footer-note a:hover { opacity: 0.8; text-decoration: underline; }
+
+
+/* Componentes: prestamos-empleados-publicos */
+/* ANIMACIONES DE ÉLITE (SHINE & SHIMMER) */
+
+
+
+/* Aislamiento de estilos específicos de la página de servicio (GLASSMORPHISM DARK) */
+.ep-page-wrapper { 
+  --glass-bg: rgba(15, 32, 64, 0.45);
+  --glass-bg-hover: rgba(22, 45, 85, 0.65);
+  --glass-border-light: rgba(255, 255, 255, 0.08);
+  --glass-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  --blur: blur(20px);
+  --green: #00C853;
+  --white: #FFFFFF;
+  
+  font-family: "Inter", sans-serif; 
+  color: var(--white); 
+  background: transparent; /* Permite ver el fondo animado de la plantilla principal */
+}
+.ep-con { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+/* Textos Shimmer Elite */
+.ep-hero h1 span, .ep-sec h2 span, .ep-cta h2 span {
+  background: linear-gradient(90deg, var(--green) 0%, #A5FFC2 50%, var(--green) 100%);
+  background-size: 200% auto;
+  color: var(--green);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textShimmer 4s linear infinite;
+  display: inline-block;
+}
+
+/* ── HERO ── */
+.ep-hero { background: transparent; padding: 72px 0 60px; text-align: center; position: relative; overflow: hidden; border-bottom: 1px solid var(--glass-border-light); }
+.ep-hero::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(rgba(0,200,83,0.06) 1px, transparent 1px); background-size: 38px 38px; pointer-events: none; }
+.ep-hero-lbl { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--green); margin-bottom: 14px; }
+.ep-hero h1 { font-family: "Montserrat", sans-serif; font-size: clamp(2rem, 5vw, 3.4rem); font-weight: 900; line-height: 1.05; letter-spacing: -0.025em; color: var(--white); margin-bottom: 18px; }
+.ep-hero-sub { font-size: clamp(0.95rem, 2vw, 1.05rem); color: rgba(255,255,255,0.78); max-width: 600px; margin: 0 auto 32px; line-height: 1.75; }
+
+/* Pills (Glass) */
+.ep-hero-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 36px; }
+.ep-pill { display: inline-flex; align-items: center; gap: 7px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border-light); color: var(--white); font-size: 0.82rem; font-weight: 600; padding: 7px 16px; border-radius: 100px; backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); box-shadow: var(--glass-shadow); }
+.ep-pill i { color: var(--green); font-size: 0.78rem; }
+
+/* Montos */
+.ep-hero-amount { font-family: "Montserrat", sans-serif; font-size: clamp(2.2rem, 5vw, 3.2rem); font-weight: 900; color: var(--white); letter-spacing: -0.02em; margin-bottom: 6px; }
+.ep-hero-amount-sub { font-size: 0.82rem; color: rgba(255,255,255,0.5); margin-bottom: 28px; }
+
+/* Botones (Con Shine Effect) */
+.ep-btn-wa { display: inline-flex; align-items: center; gap: 10px; background: var(--whatsapp-bright); color: #fff !important; font-family: "Inter", sans-serif; font-size: 1.05rem; font-weight: 700; padding: 16px 40px; border-radius: 12px; text-decoration: none; box-shadow: 0 6px 28px rgba(37,211,102,0.5); transition: all 0.3s cubic-bezier(0.25,0.46,0.45,0.94); position: relative; overflow: hidden; }
+.ep-btn-wa::after { content: ""; position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent); animation: shine 3s infinite; }
+.ep-btn-wa:hover { background: var(--whatsapp); transform: translateY(-3px); box-shadow: 0 10px 36px rgba(37,211,102,0.7); color: var(--white); text-decoration: none; }
+
+.ep-btn-out { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: rgba(255,255,255,0.7); font-size: 0.82rem; font-weight: 600; padding: 8px 20px; border-radius: 100px; border: 1px solid rgba(255,255,255,0.25); text-decoration: none; margin-top: 14px; transition: all 0.3s; }
+.ep-btn-out:hover { color: var(--green); border-color: rgba(0,200,83,0.5); text-decoration: none; }
+
+.ep-disclaimer { font-size: 0.65rem; color: rgba(255,255,255,0.3); margin-top: 14px; }
+
+/* ── SECCIONES GENERALES ── */
+.ep-sec { padding: 64px 0; border-bottom: 1px solid var(--glass-border-light); background: transparent; }
+.ep-sec-alt { background: transparent; }
+.ep-sec-lbl { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green); margin-bottom: 10px; display: block; }
+.ep-sec h2 { font-family: "Montserrat", sans-serif; font-size: clamp(1.5rem, 3.5vw, 2.2rem); font-weight: 900; color: var(--white); line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 16px; }
+.ep-sec p { font-size: 0.95rem; color: rgba(255,255,255,0.72); line-height: 1.8; margin-bottom: 14px; max-width: 680px; }
+
+/* ── GRID BENEFICIOS (GLASSMORPHISM) ── */
+.ep-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 36px; }
+.ep-card { 
+  background: var(--glass-bg); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur);
+  border: 1px solid var(--glass-border-light); border-radius: 14px; padding: 24px; transition: all 0.3s; box-shadow: var(--glass-shadow);
+  border-top: 1px solid rgba(255,255,255,0.15); border-left: 1px solid rgba(255,255,255,0.05);
+}
+.ep-card:hover { border-color: rgba(0,200,83,0.4); background: var(--glass-bg-hover); transform: translateY(-4px); box-shadow: 0 15px 35px rgba(0,0,0,0.4), 0 0 30px rgba(0,200,83,0.2); }
+.ep-card-ico { width: 46px; height: 46px; background: rgba(0,200,83,0.12); border-radius: 11px; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+.ep-card-ico i { color: var(--green); font-size: 1.2rem; }
+.ep-card h3 { font-family: "Montserrat", sans-serif; font-size: 0.95rem; font-weight: 800; color: var(--white); margin-bottom: 8px; }
+.ep-card p { font-size: 0.83rem; color: rgba(255,255,255,0.6); line-height: 1.65; margin: 0; }
+
+/* ── TABLA CONDICIONES (GLASSMORPHISM) ── */
+.ep-table { width: 100%; border-collapse: separate; border-spacing: 0; margin-top: 28px; font-size: 0.88rem; border-radius: 16px; overflow: hidden; border: 1px solid var(--glass-border-light); background: var(--glass-bg); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); box-shadow: var(--glass-shadow); }
+.ep-table th { background: rgba(0,200,83,0.1); color: var(--green); font-weight: 700; padding: 12px 16px; text-align: left; font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; border-bottom: 1px solid var(--glass-border-light); }
+.ep-table td { padding: 13px 16px; color: rgba(255,255,255,0.78); border-bottom: 1px solid rgba(255,255,255,0.05); }
+.ep-table tr:last-child td { border-bottom: none; }
+.ep-table td:first-child { color: var(--white); font-weight: 600; }
+
+/* ── PASOS ── */
+.ep-steps { display: flex; flex-direction: column; gap: 0; margin-top: 32px; }
+.ep-step { display: flex; gap: 18px; padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.ep-step:last-child { border-bottom: none; }
+.ep-step-n { width: 44px; height: 44px; flex-shrink: 0; border-radius: 11px; background: rgba(0,200,83,0.12); border: 1px solid rgba(0,200,83,0.3); color: var(--green); font-family: "Montserrat", sans-serif; font-size: 1rem; font-weight: 900; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 15px rgba(0,200,83,0.15); }
+.ep-step h4 { font-family: "Montserrat", sans-serif; font-size: 0.95rem; font-weight: 800; color: var(--white); margin-bottom: 5px; }
+.ep-step p { font-size: 0.85rem; color: rgba(255,255,255,0.58); line-height: 1.65; margin: 0; }
+
+/* ── REQUISITOS ── */
+.ep-req { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 12px; margin-top: 24px; }
+.ep-req li { display: flex; align-items: center; gap: 10px; font-size: 0.9rem; color: rgba(255,255,255,0.78); }
+.ep-req li i { color: var(--green); font-size: 0.85rem; flex-shrink: 0; }
+
+/* ── CTA FINAL (Transparente para Mesh) ── */
+.ep-cta { background: transparent; padding: 72px 0; text-align: center; position: relative; overflow: hidden; border-top: 1px solid var(--glass-border-light); }
+.ep-cta::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(0,200,83,0.09) 0%, transparent 65%); pointer-events: none; }
+.ep-cta h2 { font-family: "Montserrat", sans-serif; font-size: clamp(1.6rem, 4vw, 2.6rem); font-weight: 900; color: var(--white); line-height: 1.1; margin-bottom: 14px; position: relative; z-index: 1;}
+.ep-cta p { font-size: 0.95rem; color: rgba(255,255,255,0.7); max-width: 500px; margin: 0 auto 30px; line-height: 1.75; position: relative; z-index: 1;}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 600px) {
+  .ep-hero { padding: 52px 0 44px; }
+  .ep-sec { padding: 48px 0; }
+  .ep-grid { grid-template-columns: 1fr; }
+  .ep-table { font-size: 0.78rem; }
+  .ep-table th, .ep-table td { padding: 10px 12px; }
+}
+
+
+/* Componentes: prestamos-fuerzas-armadas */
+/* ANIMACIONES DE ÉLITE (SHINE & SHIMMER) */
+
+
+
+
+/* Aislamiento de estilos específicos de la página de servicio (GLASSMORPHISM DARK) */
+.fa-page-wrapper { 
+  --glass-bg: rgba(15, 32, 64, 0.45);
+  --glass-bg-hover: rgba(22, 45, 85, 0.65);
+  --glass-border-light: rgba(255, 255, 255, 0.08);
+  --glass-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  --blur: blur(20px);
+  --green: #00C853;
+  --white: #FFFFFF;
+
+  font-family: "Inter", sans-serif; 
+  color: var(--white); 
+  /* Fondo transparente para que se vea el Mesh Background de tu plantilla principal */
+  background: transparent; 
+}
+.fa-con { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+/* Textos Shimmer Elite */
+.fa-hero h1 span, .fa-sec h2 span, .fa-cta h2 span {
+  background: linear-gradient(90deg, var(--green) 0%, #A5FFC2 50%, var(--green) 100%);
+  background-size: 200% auto;
+  color: var(--green);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textShimmer 4s linear infinite;
+  display: inline-block;
+}
+
+/* Hero (Fondo Transparente) */
+.fa-hero { background: transparent; padding: 72px 0 60px; text-align: center; position: relative; overflow: hidden; border-bottom: 1px solid var(--glass-border-light); }
+.fa-hero::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(rgba(0,200,83,0.06) 1px, transparent 1px); background-size: 38px 38px; pointer-events: none; }
+.fa-label { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--green); margin-bottom: 14px; }
+.fa-hero h1 { font-family: "Montserrat", sans-serif; font-size: clamp(1.8rem, 5vw, 3.2rem); font-weight: 900; line-height: 1.05; letter-spacing: -0.025em; color: var(--white); margin-bottom: 18px; }
+.fa-hero-sub { font-size: clamp(0.92rem, 2vw, 1.02rem); color: rgba(255,255,255,0.78); max-width: 620px; margin: 0 auto 28px; line-height: 1.75; }
+
+/* Decreto Badge (Glass) */
+.fa-decreto-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border-light); color: var(--green); font-size: 0.78rem; font-weight: 700; padding: 8px 18px; border-radius: 100px; margin-bottom: 20px; backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); box-shadow: var(--glass-shadow); }
+
+/* Pills (Glass) */
+.fa-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 32px; }
+.fa-pill { display: inline-flex; align-items: center; gap: 7px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border-light); color: var(--white); font-size: 0.8rem; font-weight: 600; padding: 6px 14px; border-radius: 100px; backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); box-shadow: var(--glass-shadow); }
+.fa-pill i { color: var(--green); font-size: 0.76rem; }
+
+/* Montos */
+.fa-amount { font-family: "Montserrat", sans-serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; color: var(--white); letter-spacing: -0.02em; margin-bottom: 6px; }
+.fa-amount-sub { font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-bottom: 28px; }
+
+/* Botones (Con Shine Effect) */
+.fa-btn-wa { display: inline-flex; align-items: center; gap: 10px; background: var(--whatsapp-bright); color: #fff !important; font-family: "Inter", sans-serif; font-size: 1.05rem; font-weight: 700; padding: 16px 40px; border-radius: 12px; text-decoration: none; box-shadow: 0 6px 28px rgba(37,211,102,0.5); transition: all 0.3s cubic-bezier(0.25,0.46,0.45,0.94); position: relative; overflow: hidden; }
+.fa-btn-wa::after { content: ""; position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent); animation: shine 3s infinite; }
+.fa-btn-wa:hover { background: var(--whatsapp); transform: translateY(-3px); box-shadow: 0 10px 36px rgba(37,211,102,0.7); text-decoration: none; }
+
+.fa-btn-out { display: inline-flex; align-items: center; gap: 7px; background: transparent; color: rgba(255,255,255,0.65); font-size: 0.8rem; font-weight: 600; padding: 7px 18px; border-radius: 100px; border: 1px solid rgba(255,255,255,0.22); text-decoration: none; margin-top: 12px; transition: all 0.3s; }
+.fa-btn-out:hover { color: var(--green); border-color: rgba(0,200,83,0.5); text-decoration: none; }
+
+.fa-disclaimer { font-size: 0.62rem; color: rgba(255,255,255,0.3); margin-top: 14px; }
+
+/* Secciones genéricas (Transparente) */
+.fa-sec { padding: 60px 0; border-bottom: 1px solid var(--glass-border-light); background: transparent; }
+.fa-sec-alt { background: transparent; }
+.fa-sec-lbl { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green); margin-bottom: 10px; display: block; }
+.fa-sec h2 { font-family: "Montserrat", sans-serif; font-size: clamp(1.4rem, 3.5vw, 2.1rem); font-weight: 900; color: var(--white); line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 14px; }
+.fa-sec p { font-size: 0.93rem; color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 12px; max-width: 700px; }
+
+/* Grid Tarjetas (GLASSMORPHISM) */
+.fa-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; margin-top: 32px; }
+.fa-card { 
+  background: var(--glass-bg); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur);
+  border: 1px solid var(--glass-border-light); border-radius: 14px; padding: 22px; transition: all 0.3s; box-shadow: var(--glass-shadow);
+  border-top: 1px solid rgba(255,255,255,0.15); border-left: 1px solid rgba(255,255,255,0.05);
+}
+.fa-card:hover { border-color: rgba(0,200,83,0.4); background: var(--glass-bg-hover); transform: translateY(-4px); box-shadow: 0 15px 35px rgba(0,0,0,0.4), 0 0 30px rgba(0,200,83,0.2); }
+.fa-card-ico { width: 44px; height: 44px; background: rgba(0,200,83,0.12); border-radius: 11px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; }
+.fa-card-ico i { color: var(--green); font-size: 1.15rem; }
+.fa-card h3 { font-family: "Montserrat", sans-serif; font-size: 0.93rem; font-weight: 800; color: var(--white); margin-bottom: 6px; }
+.fa-card p { font-size: 0.81rem; color: rgba(255,255,255,0.58); line-height: 1.6; margin: 0; }
+
+/* Ramas (GLASSMORPHISM) */
+.fa-ramas { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 28px; }
+.fa-rama { 
+  background: var(--glass-bg); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur);
+  border: 1px solid var(--glass-border-light); border-radius: 14px; padding: 24px 20px; transition: all 0.3s; box-shadow: var(--glass-shadow);
+  border-top: 1px solid rgba(255,255,255,0.15); border-left: 1px solid rgba(255,255,255,0.05);
+}
+.fa-rama:hover { border-color: rgba(0,200,83,0.4); background: var(--glass-bg-hover); transform: translateY(-4px); box-shadow: 0 15px 35px rgba(0,0,0,0.4), 0 0 30px rgba(0,200,83,0.2); }
+.fa-rama-ico { font-size: 2rem; margin-bottom: 10px; display: block; }
+.fa-rama h3 { font-family: "Montserrat", sans-serif; font-size: 1rem; font-weight: 800; color: var(--white); margin-bottom: 10px; }
+.fa-rama ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.fa-rama ul li { display: flex; align-items: center; gap: 8px; font-size: 0.83rem; color: rgba(255,255,255,0.7); }
+.fa-rama ul li i { color: var(--green); font-size: 0.75rem; flex-shrink: 0; }
+
+/* Tabla Condiciones (GLASSMORPHISM) */
+.fa-table { width: 100%; border-collapse: separate; border-spacing: 0; margin-top: 24px; font-size: 0.87rem; border-radius: 16px; overflow: hidden; border: 1px solid var(--glass-border-light); background: var(--glass-bg); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); box-shadow: var(--glass-shadow); }
+.fa-table th { background: rgba(0,200,83,0.1); color: var(--green); font-weight: 700; padding: 15px; text-align: left; font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; border-bottom: 1px solid var(--glass-border-light); }
+.fa-table td { padding: 14px 15px; color: rgba(255,255,255,0.75); border-bottom: 1px solid rgba(255,255,255,0.05); }
+.fa-table tr:last-child td { border-bottom: none; }
+.fa-table td:first-child { color: var(--white); font-weight: 600; }
+
+/* Steps / Pasos (GLASS) */
+.fa-steps { display: flex; flex-direction: column; gap: 0; margin-top: 28px; }
+.fa-step { display: flex; gap: 16px; padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.fa-step:last-child { border-bottom: none; }
+.fa-step-n { width: 44px; height: 44px; flex-shrink: 0; border-radius: 11px; background: rgba(0,200,83,0.12); border: 1px solid rgba(0,200,83,0.3); color: var(--green); font-family: "Montserrat", sans-serif; font-size: 0.95rem; font-weight: 900; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 15px rgba(0,200,83,0.15);}
+.fa-step h4 { font-family: "Montserrat", sans-serif; font-size: 0.95rem; font-weight: 800; color: var(--white); margin-bottom: 4px; }
+.fa-step p { font-size: 0.85rem; color: rgba(255,255,255,0.58); line-height: 1.6; margin: 0; }
+
+/* Lista de Requisitos */
+.fa-req { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 11px; margin-top: 20px; }
+.fa-req li { display: flex; align-items: center; gap: 9px; font-size: 0.88rem; color: rgba(255,255,255,0.75); }
+.fa-req li i { color: var(--green); font-size: 0.82rem; flex-shrink: 0; }
+
+/* FAQ Acordeón (GLASSMORPHISM) */
+.fa-faq { display: flex; flex-direction: column; gap: 12px; margin-top: 28px; }
+.fa-faq-item { 
+  background: var(--glass-bg); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur);
+  border: 1px solid var(--glass-border-light); border-radius: 12px; overflow: hidden; transition: all 0.3s; box-shadow: var(--glass-shadow);
+  border-top: 1px solid rgba(255,255,255,0.15); border-left: 1px solid rgba(255,255,255,0.05);
+}
+.fa-faq-item.open { border-color: rgba(0,200,83,0.4); background: var(--glass-bg-hover); box-shadow: 0 15px 35px rgba(0,0,0,0.4), 0 0 30px rgba(0,200,83,0.2); }
+.fa-faq-q { padding: 16px 18px; display: flex; justify-content: space-between; align-items: center; gap: 12px; cursor: pointer; font-weight: 700; font-size: 0.92rem; color: var(--white); user-select: none; }
+.fa-faq-q i { color: var(--green); font-size: 0.8rem; transition: transform 0.3s; flex-shrink: 0; }
+.fa-faq-a { display: none; padding: 0 20px 18px; font-size: 0.88rem; color: rgba(255,255,255,0.65); line-height: 1.75; }
+.fa-faq-item.open .fa-faq-q i { transform: rotate(180deg); }
+.fa-faq-item.open .fa-faq-a { display: block; animation: fadeIn 0.4s ease; }
+
+/* CTA Final (Transparente para Mesh) */
+.fa-cta { background: transparent; padding: 70px 0; text-align: center; position: relative; overflow: hidden; border-top: 1px solid var(--glass-border-light); }
+.fa-cta h2 { font-family: "Montserrat", sans-serif; font-size: clamp(1.5rem, 4vw, 2.4rem); font-weight: 900; color: var(--white); line-height: 1.1; margin-bottom: 12px; position: relative; z-index: 1;}
+.fa-cta p { font-size: 0.93rem; color: rgba(255,255,255,0.68); max-width: 500px; margin: 0 auto 28px; line-height: 1.75; position: relative; z-index: 1;}
+
+@media(max-width:600px) {
+  .fa-hero { padding: 50px 0 40px; }
+  .fa-sec { padding: 44px 0; }
+  .fa-grid { grid-template-columns: 1fr; }
+  .fa-ramas { grid-template-columns: 1fr; }
+}
+
+
+/* Shared internal-page navigation and interlinking */
+body { overflow-x: hidden; }
+.site-breadcrumbs { position: relative; z-index: 5; border-bottom: 1px solid rgba(255,255,255,.06); background: rgba(6,15,30,.5); }
+.site-breadcrumbs .container { min-height: 44px; display: flex; align-items: center; flex-wrap: wrap; gap: 9px; font-size: .76rem; color: rgba(255,255,255,.55); }
+.site-breadcrumbs a { color: rgba(255,255,255,.72); text-decoration: none; }
+.site-breadcrumbs a:hover { color: var(--green); }
+.site-breadcrumbs i { font-size: .56rem; color: rgba(255,255,255,.26); }
+.related-links-section { position: relative; z-index: 2; padding: 64px 0; border-top: 1px solid rgba(255,255,255,.07); border-bottom: 1px solid rgba(255,255,255,.07); }
+.related-eyebrow { display: block; margin-bottom: 10px; color: var(--green); font-size: .7rem; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.related-links-section h2 { margin: 0 0 24px; color: #fff; font-family: Montserrat,sans-serif; font-size: clamp(1.45rem,3.5vw,2.1rem); font-weight: 900; }
+.related-links-section h2 span { color: var(--green); }
+.related-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 12px; }
+.related-card { min-height: 92px; padding: 18px; display: flex; align-items: center; justify-content: space-between; gap: 14px; color: #fff; text-decoration: none; background: rgba(15,32,64,.48); border: 1px solid rgba(255,255,255,.09); border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,.25); transition: transform .25s ease,border-color .25s ease,background .25s ease; }
+.related-card span { font-size: .88rem; line-height: 1.35; font-weight: 750; }
+.related-card i { color: var(--green); flex: 0 0 auto; }
+.related-card:hover { color: #fff; transform: translateY(-3px); border-color: rgba(0,200,83,.45); background: rgba(22,45,85,.68); }
+@media (max-width: 900px) { .related-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+@media (max-width: 560px) { .site-breadcrumbs .container { min-height: 40px; font-size: .68rem; } .related-links-section { padding: 46px 0; } .related-grid { grid-template-columns: 1fr; } }
+
+
+/* Página 404 */
+body.error-page {
+  --error-bg: #060f1e;
+  --error-card: #0d1b2e;
+  --error-line: #243650;
+  --error-text: #f5f7fb;
+  --error-muted: #aebbd0;
+  --error-accent: #00c853;
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  color: var(--error-text);
+  background: radial-gradient(circle at 20% 20%, #15345d 0, transparent 38%), var(--error-bg);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+.error-page * { box-sizing: border-box; }
+.error-page main {
+  width: min(680px, 100%);
+  padding: 48px;
+  border: 1px solid var(--error-line);
+  border-radius: 24px;
+  background: rgba(13, 27, 46, .92);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, .35);
+  text-align: center;
+}
+.error-page img { width: 190px; height: auto; margin: 0 auto 24px; }
+.error-page strong { display: block; font-size: clamp(4rem, 16vw, 8rem); line-height: .9; color: var(--error-accent); }
+.error-page h1 { font-size: clamp(1.8rem, 5vw, 2.8rem); margin: 20px 0 12px; }
+.error-page p { max-width: 520px; margin: 0 auto 28px; color: var(--error-muted); font-size: 1.05rem; line-height: 1.7; }
+.error-page a { display: inline-flex; padding: 14px 22px; border-radius: 999px; color: #04130c; background: var(--error-accent); text-decoration: none; font-weight: 800; }
+.error-page a:hover { transform: translateY(-2px); }
+@media (max-width: 560px) { .error-page main { padding: 34px 22px; } }
+
+/* Accesibilidad: evita animaciones intensas cuando el usuario lo solicita. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Slider de organismos - Caja de Retiros */
+.org-slider{margin:22px 0 8px}
+.org-track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 14px;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+.org-track::-webkit-scrollbar{height:6px}.org-track::-webkit-scrollbar-thumb{background:rgba(0,200,83,.35);border-radius:6px}
+.org-card{flex:0 0 230px;scroll-snap-align:start;background:var(--glass-bg);border:1px solid var(--glass-border-light);border-radius:14px;padding:20px}
+.org-card h3{font-family:"Montserrat",sans-serif;font-size:.92rem;font-weight:800;color:var(--white);margin-bottom:6px;line-height:1.35}
+.org-card p{font-size:.8rem;color:rgba(255,255,255,.58);line-height:1.5;margin:0}
+.org-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:6px}
+.org-btn{width:42px;height:42px;border-radius:50%;border:1px solid rgba(0,200,83,.4);background:rgba(0,200,83,.12);color:#fff;font-size:1.4rem;line-height:1;cursor:pointer}
+.org-hint{font-size:.82rem;color:rgba(255,255,255,.6)}
+@media(max-width:600px){.org-card{flex-basis:200px}}
